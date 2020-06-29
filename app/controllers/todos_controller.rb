@@ -12,7 +12,7 @@ class TodosController < ApplicationController
   def create 
     @todo = Todo.new(todo_params)
     if @todo.save
-      flash[:notice] = "Todo Created"
+      flash[:success] = "Todo Created"
       redirect_to todo_path(@todo)
     else
       render 'new'
@@ -28,9 +28,8 @@ class TodosController < ApplicationController
   end
 
   def update 
-    
     if @todo.update(todo_params)
-      flash[:notice] = "Todo is Updated"
+      flash[:success] = "Todo is Updated"
       redirect_to @todo
     else
       render 'edit'

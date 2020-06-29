@@ -1,17 +1,33 @@
+<div class="container">
+  <div class="col-md-10 offset-md-3">
+    <form class="mx-auto">
+    <%= form_with(model: @todo, local: true) do |f| %>
 
+      <div class="form-group mt-3">
+        <div class="control-label col-md-6">
+          <%= f.label :todo_name %> 
+        </div>
+        <div class="col-md-8">
+          <%= f.text_field :name, class: 'form-control', placeholder: "Name of Todo", autofocus: true %>
+        </div>
+      </div>  
 
-<%= form_with(model: @todo, local: true) do |f| %>
-  <p>
-    <%= f.label :name %> <br />
-    <%= f.text_field :name %>
-  </p>
+      <div class="form-group">
+        <div class="control-label col-md-6">
+          <%= f.label :todo_description %> 
+        </div>
+        <div class="col-md-8">
+          <%= f.text_area :description, rows: 5, class: 'form-control', placeholder: "Description of Todo" %>
+        </div>
+      </div>
 
-  <p>
-    <%= f.label :description %> <br />
-    <%= f.text_field :description %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <%= f.submit class: "btn btn-primary" %> 
+          <%= link_to "Todos", todos_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    <% end %>
+ </form>
+  </div>
+</div>
