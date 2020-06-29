@@ -1,1 +1,11 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+body {
+  margin-top: 30px;
+}
+
+.jumbotron {
+  background-image: asset-url("london.png");
+  background-size: cover;
+  height: 600px;
+}
