@@ -1,8 +1,17 @@
-<h2>Showing a Todo</h2>
-<p>
-  Name: <%= @todo.name %>
-</p>
-<p></p>
-<p>
-  Description: <%= @todo.description %>
-</p>
+<div class="show-panel">
+  <div class="card show-card">
+  <h1 class="text-center mt-4 object-color"><%= @todo.name %></h1>
+    <p class="text-center object-color">Created by:
+      <%#= @todo.user.username if @todo.user %>
+    </p>
+    <p class="text-center mt-4 object-color">Description: <%= @todo.description %></p>
+    <p class="text-center">
+      <%= link_to "Home Page", root_path, class: "btn btn-primary " %> 
+      <%= link_to "All todos", todos_path, class: "btn btn-info " %> 
+      <%# if logged_in? && (@todo.user == current_user || current_user.admin?) %>
+        <%= link_to "Edit Article", edit_todo_path(@todo), class: "btn btn-warning " %> 
+        <%= link_to "Delete Todo", todo_path(@todo), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+      <%# end %>
+    </p>
+  </div>
+</div>

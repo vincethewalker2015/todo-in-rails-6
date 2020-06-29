@@ -9,7 +9,7 @@ class TodosController < ApplicationController
     @todo = Todo.new
   end
 
-  def create 
+  def create
     @todo = Todo.new(todo_params)
     if @todo.save
       flash[:success] = "Todo Created"
@@ -38,7 +38,7 @@ class TodosController < ApplicationController
 
   def destroy
     @todo.destroy
-    flash[:notice] = "Todo had been deleted"
+    flash[:danger] = "Todo had been deleted"
     redirect_to todos_path
   end
 
